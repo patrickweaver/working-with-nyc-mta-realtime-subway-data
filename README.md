@@ -7,3 +7,6 @@ A simple interactive slides website
 2. `npm start`
 
 ## Deploying
+
+1. `npm run build` generates your static site
+2. I use GitHub Actions to deploy to GitHub pages, see slide 4.
