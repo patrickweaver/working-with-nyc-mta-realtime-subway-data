@@ -1,4 +1,5 @@
-# canvas-lines
+# interactive-slides-website
+
 A simple interactive slides website
 
 ## Running Locally
