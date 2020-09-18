@@ -1,1 +1,2 @@
-rm -r ../doodles/build/canvas-lines && mkdir ../doodles/build/canvas-lines && cp -r dist/* ../doodles/build/canvas-lines
+rm -r ../doodles/build/interactive-slides-website
+mkdir ../doodles/build/interactive-slides-website && cp -r dist/* ../doodles/build/interactive-slides-website
