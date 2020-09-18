@@ -1,0 +1,23 @@
+---
+layout: layouts/indexMain.hbs
+title: "Making a Simple Interactive Slides Website with Eleventy"
+cardTitle: "This is the table of contents"
+tags: slides
+---
+
+<p>You could write something here that explains what the presentation is going to be about.</p>
+
+<!-- This list will be automatically generated
+from index.hbs files in folders that are in numbered
+folders. -->
+
+<h2>Slides</h2>
+<ol class="slides-list">
+{{#each collections.slidesSorted }}
+  <li>
+    <a href=".{{this.url}}">{{this.data.cardTitle}}</a>
+  </li>
+{{/each}}
+</ol>
+
+<p><a href="🚸 LINK TO SOURCE CODE 🚸">View Source</a></p>

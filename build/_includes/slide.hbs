@@ -1,0 +1,21 @@
+<div id="slide-content">
+
+  <ul id="nav">
+    <li>{{{ prevSlide page.url }}}</li>
+    <li><a href="../../">Slide List</a></li>
+    <li>{{{ nextSlide page.url collections.slides }}}</li>
+  </ul>
+
+  <h1>🚸 TITLE OF YOUR PRESENTATION 🚸</h1>
+  
+  {{#if this.cardTitle}}
+    <h2 class="card-title">{{ this.cardTitle}}</h2>
+  {{/if}}
+  
+  <div id="card-content">
+    {{{ content }}}
+  </div>
+
+  {{> footerExample }}
+</div>
+
