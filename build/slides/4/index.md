@@ -7,7 +7,9 @@ tags: slides
 
 Eleventy will generate a site that expects to be deployed in the root directory, but I've been careful to use exclusively relative links in the boilerplate (and image links) here. I use the copy.sh file to copy the /dist folder to another Eleventy site so I don't have to put up a new website for each set of slides.
 
-I deploy my Eleventy sites on GitHub pages with this GitHub Action (indentation wrong here but correct in source):
+Serve your site locally with "npm start" and build the full static site to the /dist directory with "npm run build"
+
+I deploy my Eleventy sites on GitHub pages with this GitHub Action:
 
 <pre><code>
 name: github pages
