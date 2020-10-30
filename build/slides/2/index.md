@@ -1,6 +1,6 @@
 ---
 layout: layouts/main.hbs
-title: "Slide 2: Making a Simple Interactive Slides Website with Eleventy"
+title: "Slide 2: Working with NYC MTA Real-Time Data"
 cardTitle: "Really, mix and match!"
 tags: slides
 ---

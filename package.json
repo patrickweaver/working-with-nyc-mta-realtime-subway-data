@@ -1,5 +1,5 @@
 {
-  "name": "interactive-slides-website",
+  "name": "working-with-nyc-mta-realtime-data",
   "version": "1.0.0",
   "description": "A simple interactive slides website",
   "main": "server.js",
@@ -14,7 +14,7 @@
     "node": "14.x"
   },
   "repository": {
-    "url": "https://github.com/patrickweaver/interactive-slides-website"
+    "url": "https://github.com/patrickweaver/working-with-nyc-mta-realtime-data"
   },
   "license": "MIT"
 }

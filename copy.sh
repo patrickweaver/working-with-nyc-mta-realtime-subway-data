@@ -1,2 +1,2 @@
-rm -r ../doodles/build/interactive-slides-website
-mkdir ../doodles/build/interactive-slides-website && cp -r dist/* ../doodles/build/interactive-slides-website
+#rm -r ../doodles/build/working-with-nyc-mta-realtime-data
+mkdir ../doodles/build/working-with-nyc-mta-realtime-data && cp -r dist/* ../doodles/build/working-with-nyc-mta-realtime-data
