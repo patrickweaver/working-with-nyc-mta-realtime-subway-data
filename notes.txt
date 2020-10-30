@@ -1,0 +1,6 @@
+1. Getting an API Key
+2. Exploring the feeds
+3. Shape of the feed response
+4. Shape of individual parts of the feed response
+5. Following train data over time
+6. 

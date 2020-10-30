@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("build/*.js");
   eleventyConfig.addPassthroughCopy("build/slides/*/*.js");
+  eleventyConfig.addPassthroughCopy("build/leaflet/*.js");
 
   eleventyConfig.addShortcode("prevSlide", function(inputPath) {
     const currentPage = parseInt(inputPath.split("/")[2])

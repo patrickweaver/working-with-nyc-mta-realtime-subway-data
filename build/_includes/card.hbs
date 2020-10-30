@@ -1,0 +1,19 @@
+<div id="card">
+
+  <ul id="nav">
+    <li>{{{ prevSlide page.url }}}</li>
+    <li><a href="../../">Slide List</a></li>
+    <li>{{{ nextSlide page.url collections.slides }}}</li>
+  </ul>
+
+  
+  {{#if this.cardTitle}}<h2 class="card-title">{{ this.cardTitle}}</h2>{{/if}}
+  <div id="card-content">
+    {{{ content }}}
+  </div>
+
+  <div id="responsive">
+    <button id="hide-card" onclick="hideCard()">Hide Card</button>
+    <button id="show-card" onclick="showCard()">Show Card</button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+layout: layouts/map.hbs
+title: "Slide 7: Working with NYC MTA Real-Time Subway Data"
+cardTitle: "Plotting train positions over time"
+tags: slides
+---
+
+<p>The only data we know is how far each train is from the next station. There isn't any data from the MTA on how ong each train should take between each station, so the best solution to showing where the train currently is is logging how long a train typically takes beteween a pair of stations.</p>
+
+<p>To do this we can look ahead at arrival estimates:</p>
+
+<button onclick="update()">Next Update</button>
+
+<script src="../../trip.js"></script>
+<script src="../../station.js"></script>
