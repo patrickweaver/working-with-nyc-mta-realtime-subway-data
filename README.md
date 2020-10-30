@@ -1,6 +1,6 @@
 # Working with NYC MTA Real-Time Data
 
-A simple interactive slides website
+Interactive slides on working with NYC Subway Data
 
 ## Running Locally
 
@@ -10,4 +10,4 @@ A simple interactive slides website
 ## Deploying
 
 1. `npm run build` generates your static site
-2. I use GitHub Actions to deploy to GitHub pages, see slide 4.
+2. I use GitHub Actions to deploy to GitHub pages, see [slide 4 in this other presentation](https://github.com/patrickweaver/interactive-slides-website).
