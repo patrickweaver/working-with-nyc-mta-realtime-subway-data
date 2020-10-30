@@ -7,7 +7,7 @@ tags: slides
 
 There are 9 Realtime Subway feeds, which are listed [here](https://api.mta.info/#/subwayRealTimeFeeds). They are all the same except for the last 1 - 4 characters (except the 123456 feed which is just the base url).
 
-![A screenshot of the RealTime Subway feeds page](/images/feeds-page.png)
+![A screenshot of the RealTime Subway feeds page](../../images/feeds-page.png)
 
 | Lines | Endpoint |
 | --- | ----------- |
