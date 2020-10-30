@@ -7,16 +7,26 @@ body {
   /* top margin is to show nav bar */
   margin: 3em auto 5em;
   text-align: center;
-  max-width: 400px;
+  max-width: 600px;
+}
+
+p, li, td {
+  font-size: 18px;
+  line-height: 22px;
 }
 
 ul {
   padding: 0;
+  text-align: left;
 }
 
 ul > li {
   list-style-type: none;
   padding: 0;
+}
+
+table {
+  text-align: left;
 }
 
 /* Code block styling */
@@ -27,7 +37,12 @@ pre {
   border: 1px solid #DDD;
   padding: 5px 10px;
   overflow-x: auto;
-  font-size: 12px;
+  font-size: 14px;
+}
+
+p > code {
+  background-color: #EEE;
+  padding: 0px 3px;
 }
 
 #nav {
@@ -37,8 +52,10 @@ pre {
   padding: 15px 10px 15px;
   position: fixed;
   top: 0px;
-  width: 400px;
+  max-width: 600px;
+  width: 100%;
   background-color: white;
+  text-align: center;
 }
 
 #nav > li {

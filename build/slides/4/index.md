@@ -1,41 +1,71 @@
 ---
 layout: layouts/main.hbs
-title: "Slide 4: Working with NYC MTA Real-Time Data"
-cardTitle: "Putting it online"
+title: "Slide 4: Working with NYC MTA Real-Time Subway Data"
+cardTitle: "What the GTFS Data means"
 tags: slides
 ---
 
-Eleventy will generate a site that expects to be deployed in the root directory, but I've been careful to use exclusively relative links in the boilerplate (and image links) here. I use the copy.sh file to copy the /dist folder to another Eleventy site so I don't have to put up a new website for each set of slides.
+The useful data is all in the `Entity` array. This array is made up of two kinds of objects, `tripUpdate`s and `vehicle`s. These objects come in pairs, which are probably in sequence in the array. Each has an `id` property, which will not refer always to the same train between API responses.
 
-Serve your site locally with "npm start" and build the full static site to the /dist directory with "npm run build"
-
-I deploy my Eleventy sites on GitHub pages with this GitHub Action:
+Each `vehicle` or `tripUpdate` item will have a `trip` property that will be the same between the pairs. This has a `tripId` property which can be used to identify the train in future API responses, and shows the train's line designation, and direction (all trains in the system are classified as either `N` or `S`). It also has a frustratingly HH:MM:SS formatted timestamp for when the train started (or will start) its journey.
 
 <pre><code>
-name: github pages
-on:
-  push:
-    branches:
-      - master
 
-jobs:
-  build_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
-      - run: npm install
-      - name: Build
-        uses: TartanLlama/actions-eleventy@v1.2
-      - name: CNAME
-        run: echo '🚸 YOUR WEBSITE URL INCLUDING SUBDOMAIN' | sudo tee dist/CNAME
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: dist
-</code></pre>
+"trip": {
+  "tripId": "081600_A..N",
+  "startTime": "13:36:00",
+  "startDate": "20200902",
+  "routeId": "A"
+}
 
-[Instructions for setting up GitHub Actions deploy keys](https://medium.com/@cmichel/how-to-deploy-a-create-react-app-with-github-actions-5e01f7a7b6b)
+</pre></code>
+
+### vehicle Objects
+A `vehicle` object has information about the current status of the train. The `trip` property will stay consistent throughout the train's journey in future API responses. `tripUpdate` objects have a matching `trip` property. The `currentStopSequence` counts the number of stops the train has made on the current journey. This may refer to a different stop depending on things like if the train is local or express. `stopId` refers to the last station the train stopped at. The MTA mantains [a list of all the stations in the system](http://web.mta.info/developers/data/nyct/subway/Stations.csv) where this `stopId` is called the `GTFS StopId`.
+
+<pre><code>
+
+"vehicle": {
+  "trip": {
+    "tripId": "081600_A..N",
+    "startTime": "13:36:00",
+    "startDate": "20200902",
+    "routeId": "A"
+  },
+  "currentStopSequence": 35,
+  "stopId": "A05"
+}
+
+</pre></code>
+
+### tripUpdate Objects
+
+A `tripUpdate` object has information about where the train will be in the future. The `stopTimeUpdate` property is an array of future stops with arrival/departure timestamps (from what I've seen these timestamps are always the same), and a `stopId`. The example below shows a train near the end of its journey with only 2 stops to go.
+
+<pre><code>
+
+"tripUpdate": {
+  "trip": {
+    "tripId": "081600_A..N",
+    "startTime": "13:36:00",
+    "startDate": "20200902",
+    "routeId": "A"
+  },
+  "stopTimeUpdate": [
+
+    {
+      "arrival": { "time": "1599074067" },
+      "departure": { "time": "1599074067" },
+      "stopId": "A03N"
+    },
+    
+    {
+      "arrival": { "time": "1599074262" },
+      "departure": { "time": "1599074262" },
+      "stopId": "A02N"
+    }
+
+  ]
+}
+
+</pre></code>

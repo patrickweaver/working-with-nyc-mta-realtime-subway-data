@@ -1,5 +1,5 @@
 {
-  "name": "working-with-nyc-mta-realtime-data",
+  "name": "working-with-nyc-mta-realtime-subway-data",
   "version": "1.0.0",
   "description": "A simple interactive slides website",
   "main": "server.js",
@@ -14,7 +14,7 @@
     "node": "14.x"
   },
   "repository": {
-    "url": "https://github.com/patrickweaver/working-with-nyc-mta-realtime-data"
+    "url": "https://github.com/patrickweaver/working-with-nyc-mta-realtime-subway-data"
   },
   "license": "MIT"
 }
